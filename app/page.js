@@ -1,32 +1,11 @@
-"use client"
+"use client";
 import { Hero, Products } from "./sections";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const Home = () => {
   return (
-    <div className="bg-black p-0">
-      <HorizontalScrollCarousel />
-    </div>
-  );
-};
-
-const HorizontalScrollCarousel = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-95%"]);
-
-  return (
-    <section ref={targetRef} className="relative h-[300vh]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex">
-          <Hero />
-          <Products />
-        </motion.div>
-      </div>
+    <section className="relative bg-black w-screen max-w-[1440px]">
+      <Hero />
+      <Products />
     </section>
   );
 };

@@ -3,13 +3,7 @@
 @tailwind utilities;
 
 :root {
-  
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    
-  }
+  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
